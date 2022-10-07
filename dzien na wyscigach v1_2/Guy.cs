@@ -37,13 +37,14 @@ namespace dzien_na_wyscigach_v1_2
             // Ustal nowy zakład i przechowaj go w polu MyBet
             // Zwróć true, jeżeli facet ma wystarczającą ilość pieniędzy, aby obstawić
             
-            if(Cash > 0)
+            if(Cash > BetAmount)
             {
                 MyBet = new Bet() { Amount = BetAmount, Dog = DogToWin, Bettor = this};
               
                 UpdateLabels();
                 return true;
             }
+            MessageBox.Show("Masz za mało pieniędzy");
             return false;
         }
 
