@@ -34,7 +34,15 @@
             {
                 if (guysArray[i].MyRadioButton.Checked)
                 {
-                    guysArray[i].PlaceBet((int)betAmountNumericUpDown.Value, (int)selectGreyhoundNumberNumericUpDown.Value);
+                    if(guysArray[i].Cash > (int)betAmountNumericUpDown.Value)
+                    {
+                        guysArray[i].PlaceBet((int)betAmountNumericUpDown.Value, (int)selectGreyhoundNumberNumericUpDown.Value);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Masz za mało pieniędzy");
+
+                    }  
                   
                 }
             }
